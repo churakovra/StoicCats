@@ -54,6 +54,7 @@ dependencies {
     implementation(libs.glide)
     //rxJava3
     implementation(libs.rxJava3)
+    implementation(libs.retrofitRxJava3Adapter)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
