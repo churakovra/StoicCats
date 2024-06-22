@@ -55,6 +55,8 @@ dependencies {
     //rxJava3
     implementation(libs.rxJava3)
     implementation(libs.retrofitRxJava3Adapter)
+    //gson
+    implementation(libs.gson)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
