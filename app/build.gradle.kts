@@ -50,6 +50,8 @@ dependencies {
 
     //retrofit
     implementation (libs.retrofit)
+    //glide
+    implementation(libs.glide)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
