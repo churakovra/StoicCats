@@ -11,9 +11,11 @@ activity = "1.9.0"
 constraintlayout = "2.1.4"
 retrofitVersion = "2.11.0"
 glideVersion = "4.16.0"
-rxJava3Version = "3.1.8"
-retrofitRxJava3AdapterVersion = "3.0.0"
 gsonVersion = "2.11.0"
+#useless imports of rxJava3, using coroutines instead
+#rxJava3Version = "3.1.8"
+rxAndroid = "3.0.2'"
+#retrofitRxJava3AdapterVersion = "3.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -26,9 +28,11 @@ androidx-activity = { group = "androidx.activity", name = "activity", version.re
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofitVersion" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glideVersion" }
-rxJava3 = { module = "io.reactivex.rxjava3:rxjava", version.ref = "rxJava3Version" }
-retrofitRxJava3Adapter = { module = "com.github.akarnokd:rxjava3-retrofit-adapter", version.ref = "retrofitRxJava3AdapterVersion" }
-gson = { module = "com.google.code.gson:gson", version.ref = "gsonVersion" }
+#useless imports of rxJava3, using coroutines instead
+#rxJava3 = { module = "io.reactivex.rxjava3:rxjava", version.ref = "rxJava3Version" }
+#rxAndroid = {module = "implementation 'io.reactivex.rxjava3:rxandroid", version.ref = "rxAndroid"}
+#retrofitRxJava3Adapter = { module = "com.github.akarnokd:rxjava3-retrofit-adapter", version.ref = "retrofitRxJava3AdapterVersion" }
+gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "gsonVersion" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

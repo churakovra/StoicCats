@@ -49,12 +49,16 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
 
     //retrofit
-    implementation (libs.retrofit)
+    implementation(libs.retrofit)
     //glide
     implementation(libs.glide)
-    //rxJava3
-    implementation(libs.rxJava3)
-    implementation(libs.retrofitRxJava3Adapter)
+    /*
+    //useless imports of rxJava3, using coroutines instead
+        //rxJava3
+        implementation(libs.rxJava3)
+        implementation(libs.rxAndroid)
+        implementation(libs.retrofitRxJava3Adapter)
+    */
     //gson
     implementation(libs.gson)
 
