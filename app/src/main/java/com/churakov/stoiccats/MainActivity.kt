@@ -1,20 +1,26 @@
 package com.churakov.stoiccats
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.lifecycleScope
+import com.churakov.stoiccats.api.StoicApiFactory
+import com.churakov.stoiccats.api.StoicApiService
+import com.churakov.stoiccats.api.StoicQuote
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var stoicApi: StoicApiService
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+        stoicApi = StoicApiFactory.getStoicApi
+        lifecycleScope.launch {
+            val stoicQuote = stoicApi.loadStoicQuote()
+            Log.d("MainActivity", stoicQuote.toString())
         }
     }
 }
