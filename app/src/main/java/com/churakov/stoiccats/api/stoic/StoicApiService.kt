@@ -1,6 +1,5 @@
-package com.churakov.stoiccats.api
+package com.churakov.stoiccats.api.stoic
 
-import retrofit2.Call
 import retrofit2.http.GET
 
 interface StoicApiService {

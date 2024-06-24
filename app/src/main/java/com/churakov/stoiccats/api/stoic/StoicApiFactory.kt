@@ -1,6 +1,5 @@
-package com.churakov.stoiccats.api
+package com.churakov.stoiccats.api.stoic
 
-import hu.akarnokd.rxjava3.retrofit.RxJava3CallAdapterFactory
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -12,6 +11,7 @@ object StoicApiFactory {
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
-    private val _getStoicApi: StoicApiService = retrofit.create(StoicApiService::class.java)
-    val getStoicApi: StoicApiService = _getStoicApi
+    private val _getStoicApi: StoicApiService? = null
+    val getStoicApi: StoicApiService =
+        _getStoicApi ?: retrofit.create(StoicApiService::class.java)
 }

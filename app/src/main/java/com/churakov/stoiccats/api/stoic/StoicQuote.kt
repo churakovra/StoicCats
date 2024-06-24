@@ -1,4 +1,4 @@
-package com.churakov.stoiccats.api
+package com.churakov.stoiccats.api.stoic
 
 import com.google.gson.annotations.SerializedName
 
