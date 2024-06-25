@@ -2,6 +2,7 @@
 .gradle
 /local.properties
 /.idea/
+/app/src/main/java/com/churakov/stoiccats/Config.kt
 .DS_Store
 /build
 /captures
