@@ -6,5 +6,5 @@ data class StoicQuote(
     @SerializedName("author")
     private val author: String? = null,
     @SerializedName("quote")
-    private val quote: String
+    val quote: String
 )
