@@ -12,7 +12,7 @@ interface TranslateApiService {
     )
     @POST("v2/translate")
     suspend fun translateText(
-        @Query("sourceLanguageCode") sourceLanguageCode: String,
+//        @Query("sourceLanguageCode") sourceLanguageCode: String = "en",
         @Query("targetLanguageCode") targetLanguageCode: String,
         @Query("texts") text: Array<String>
     ): TranslatedResponse
