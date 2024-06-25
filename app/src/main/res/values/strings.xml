@@ -2,4 +2,5 @@
     <string name="app_name">StoicCats</string>
     <string name="image_desc">image of car</string>
     <string name="next_image">Next image</string>
+    <string name="greeting">hello, click on the button below please</string>
 </resources>
