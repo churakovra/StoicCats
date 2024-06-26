@@ -12,8 +12,8 @@ object CatsApiNoRetrofit {
     val instance: CatsApiNoRetrofit = _instance ?: CatsApiNoRetrofit
 
 
-    fun loadDogImage(path: String, query: Map<String, String>) {
-        val url = constructUrl(path, query)
+    fun loadCatImage(path: String, query: Map<String, String>) {
+        val url = URL(constructUrl(path, query))
         val urlConnection: HttpURLConnection
         try {
             urlConnection = url.openConnection() as HttpURLConnection
@@ -36,12 +36,12 @@ object CatsApiNoRetrofit {
 
     }
 
-    fun <T> constructUrl(inputPath: String, inputQuery: Map<String, T>): URL {
+    fun <T> constructUrl(inputPath: String, inputQuery: Map<String, T>): String {
         val path = pathConstructor(inputPath)
         val query = queryConstructor(inputQuery)
         val baseUrl = "https://cataas.com/cat/says/$path?$query"
         val url = URL(baseUrl)
-        return url
+        return baseUrl
     }
 
     private fun pathConstructor(path: String): String = path.trim().replace(" ", "%20")
