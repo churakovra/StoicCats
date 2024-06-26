@@ -1,6 +1,7 @@
 package com.churakov.stoiccats
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -15,11 +16,17 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     private val _imgUrlData = MutableLiveData<URI>()
     val imgUrlData: LiveData<URI> = _imgUrlData
 
+    private val _isLoading = MutableLiveData<Boolean>()
+    val isLoading: LiveData<Boolean> = _isLoading
+
     suspend fun loadImg() {
+        _isLoading.value = true
         val nextQuote = getQuote()
         val translatedRandomQuote = translateQuote(nextQuote)
         val catImgUrlString = getCatImgUrlString(translatedRandomQuote)
+        Log.d("MainActivity", catImgUrlString)
         _imgUrlData.value = URI(catImgUrlString)
+        _isLoading.value = false
     }
 
     private suspend fun getQuote(): String {
